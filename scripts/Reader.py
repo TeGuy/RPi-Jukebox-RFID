@@ -70,12 +70,12 @@ class PcscdReader(object):
     def __init__(self):
         self.card= rfidiot.card
         args = rfidiot.args
-        self.card.settagtype(card.ALL)
+        self.card.settagtype(self.card.ALL)
 
     def readCard(self):
         while True:
             if self.card.select('A') or self.card.select('B'):
-                return card.uid
+                return self.card.uid
 
         return None
 
